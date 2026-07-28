@@ -1,0 +1,6 @@
+{
+  "name": "PRO FAST YY-203 - محطة الطاقة المحمولة",
+  "description": "صفحة هبوط فاخرة لمحطة الطاقة المحمولة PRO FAST YY-203 في المغرب مع نموذج طلب سريع والدفع عند الاستلام.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
