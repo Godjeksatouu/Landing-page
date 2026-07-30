@@ -38,8 +38,8 @@ export const PortsOverview: React.FC = () => {
         {/* Interactive Inspector Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-          {/* Port Selector Buttons */}
-          <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          {/* Port Selector Buttons - 2 col on mobile */}
+          <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-2 gap-2 sm:gap-2.5">
             {VERIFIED_PORTS.map((port) => {
               const Icon = iconMap[port.id] ?? Plug;
               const isSelected = port.id === activePortId;

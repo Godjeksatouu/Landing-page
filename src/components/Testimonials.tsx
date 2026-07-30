@@ -41,7 +41,7 @@ export const Testimonials: React.FC = () => {
           {REVIEWS.map((review) => (
             <div
               key={review.id}
-              className="glass-card-luxury p-6 md:p-8 rounded-3xl border border-white/8 bg-[#151515]/80 hover:border-[#79E000]/35 transition-all duration-300 relative flex flex-col justify-between group shadow-xl"
+            className="glass-card-luxury p-5 md:p-8 rounded-3xl border border-white/8 bg-[#151515]/80 hover:border-[#79E000]/35 transition-all duration-300 relative flex flex-col justify-between group shadow-xl"
             >
               {/* Large Quote Watermark */}
               <div className="absolute top-4 left-4 text-[#79E000]/8 pointer-events-none">

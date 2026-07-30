@@ -35,14 +35,14 @@ export const BenefitsGrid: React.FC = () => {
           </p>
         </div>
 
-        {/* Benefits Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Benefits Cards Grid - 2 cols on small, 3 on large */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
           {VERIFIED_PORTS.map((port) => {
             const Icon = iconMap[port.id] ?? Plug;
             return (
               <div
                 key={port.id}
-                className="glass-card-luxury p-6 rounded-2xl border border-white/8 bg-[#151515]/80 flex flex-col justify-between text-right group"
+                className="glass-card-luxury p-4 sm:p-6 rounded-2xl border border-white/8 bg-[#151515]/80 flex flex-col justify-between text-right group"
               >
                 {/* Icon + Badge Row */}
                 <div>

@@ -4,12 +4,24 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Cairo', 'Tajawal', system-ui, -apple-system, sans-serif;
+    -webkit-text-size-adjust: 100%;
   }
   
   body {
     background-color: #050505;
     color: #FFFFFF;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* iOS safe-area for sticky footer CTA */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Prevent text selection on interactive elements */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 

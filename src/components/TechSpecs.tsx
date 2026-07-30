@@ -40,10 +40,10 @@ export const TechSpecs: React.FC = () => {
             {specs.map((item, index) => (
               <div
                 key={index}
-                className="py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-sm group hover:bg-white/[0.015] rounded-xl px-2 transition-colors"
+                className="py-3.5 sm:py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-2 text-sm group hover:bg-white/[0.015] rounded-xl px-2 transition-colors"
               >
-                <span className="text-gray-500 font-medium sm:w-2/5 font-['Cairo']">{item.label}</span>
-                <span className="text-white font-bold sm:w-3/5 sm:text-left font-['Cairo'] group-hover:text-[#79E000] transition-colors duration-200">{item.value}</span>
+                <span className="text-gray-500 font-medium sm:w-2/5 text-xs sm:text-sm font-['Cairo']">{item.label}</span>
+                <span className="text-white font-bold sm:w-3/5 sm:text-right text-xs sm:text-sm font-['Cairo'] group-hover:text-[#79E000] transition-colors duration-200">{item.value}</span>
               </div>
             ))}
           </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AlertTriangle, CheckCircle2, XCircle, Flame, Moon, BatteryWarning, Sparkles } from 'lucide-react';
+import { useCaseImg } from '../assets/images';
 
 const painPoints = [
   {
@@ -123,7 +124,7 @@ export const ProblemSection: React.FC = () => {
             {/* Image */}
             <div className="relative rounded-2xl overflow-hidden border border-white/10 group">
               <img
-                src="/src/assets/images/power_station_use_case_1785257288169.jpg"
+                src={useCaseImg}
                 alt="مقارنة قبل وبعد محطة الطاقة PRO FAST"
                 className="w-full h-64 md:h-80 object-cover group-hover:scale-105 transition-all duration-700"
               />

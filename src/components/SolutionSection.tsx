@@ -1,5 +1,6 @@
 import React from 'react';
 import { Zap, BatteryCharging, Radio, Plug, Sparkles, ArrowLeft } from 'lucide-react';
+import { portsImg } from '../assets/images';
 
 const highlights = [
   {
@@ -59,7 +60,7 @@ export const SolutionSection: React.FC = () => {
             <div className="lg:col-span-7 relative">
               <div className="relative rounded-3xl overflow-hidden border border-white/12 shadow-2xl">
                 <img
-                  src="/src/assets/images/power_station_ports_1785257272780.jpg"
+                  src={portsImg}
                   alt="واجهة منافذ محطة PRO FAST YY-203"
                   className="w-full h-auto max-h-[420px] object-cover group-hover:scale-105 transition-all duration-700"
                 />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Plug, Radio, Lightbulb, Zap, ArrowLeft, Tv } from 'lucide-react';
+import { heroImg, portsImg } from '../assets/images';
 
 const spotlights = [
   {
@@ -13,7 +14,7 @@ const spotlights = [
       'تشغيل مراوح التهوية في الليالي الحارة',
       'توصيل الراوتر والإنترنت بدون توقف',
     ],
-    img: '/src/assets/images/power_station_ports_1785257272780.jpg',
+    img: portsImg,
     imgAlt: 'مقبس AC لمحطة PRO FAST YY-203',
     imgTag: '⚡ منفذ تيار متردد AC عالمي',
     floatingTitle: 'تشغيل اللابتوب والمروحة',
@@ -32,7 +33,7 @@ const spotlights = [
       'مكبر صوت مدمج عالي النقاء',
       'التقاط إذاعات الأخبار والبرامج بدون انقطاع',
     ],
-    img: '/src/assets/images/power_station_hero_1785257257475.jpg',
+    img: heroImg,
     imgAlt: 'راديو FM لمحطة PRO FAST YY-203',
     imgTag: '📻 راديو عالي الحساسية',
     floatingTitle: 'التقاط إذاعات المغرب',
@@ -48,10 +49,10 @@ export const FeatureSpotlight: React.FC = () => {
   };
 
   return (
-    <section className="py-16 md:py-28 scene-spotlight border-t border-white/8 relative overflow-hidden">
+    <section className="py-14 md:py-28 scene-spotlight border-t border-white/8 relative overflow-hidden">
       <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-[#79E000]/8 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16 md:space-y-24">
         {spotlights.map((item, idx) => {
           const BadgeIcon = item.badgeIcon;
           return (
@@ -70,7 +71,7 @@ export const FeatureSpotlight: React.FC = () => {
                   <img
                     src={item.img}
                     alt={item.imgAlt}
-                    className="w-full h-64 sm:h-80 object-cover rounded-2xl group-hover:scale-105 transition-all duration-700 shadow-2xl"
+                    className="w-full h-52 sm:h-64 md:h-80 object-cover rounded-2xl group-hover:scale-105 transition-all duration-700 shadow-2xl"
                   />
 
                   {/* Floating Badge */}

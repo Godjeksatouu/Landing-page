@@ -27,7 +27,7 @@ export const StickyMobileCta: React.FC = () => {
   if (!isVisible || !scrolled) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden p-3 bg-[#050505]/97 backdrop-blur-xl border-t border-[#79E000]/30 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden px-3 pt-3 pb-safe bg-[#050505]/97 backdrop-blur-xl border-t border-[#79E000]/30 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]" style={{ paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom, 0px))' }}>
       <div className="max-w-md mx-auto flex items-center justify-between gap-3">
 
         {/* Price & Shipping */}
