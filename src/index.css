@@ -7,44 +7,67 @@
   }
   
   body {
-    background-color: #020407;
+    background-color: #050505;
     color: #FFFFFF;
     overflow-x: hidden;
   }
 }
 
-/* Luxury Cinematic Glass & Lighting Utilities */
-.glass-scene-card {
-  background: rgba(10, 15, 24, 0.7);
+/* Glass Card (base alias) */
+.glass-card {
+  background: rgba(21, 21, 21, 0.75);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-scene-emerald {
-  background: linear-gradient(135deg, rgba(16, 26, 20, 0.85) 0%, rgba(6, 12, 10, 0.95) 100%);
+/* ----------------------------------------------------
+   COLOR SYSTEM & UTILITIES
+   Primary: #79E000
+   Dark: #050505
+   Surface: #101010
+   Cards: #151515
+   ---------------------------------------------------- */
+
+.glass-card-luxury {
+  background: rgba(21, 21, 21, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-luxury:hover {
+  border-color: rgba(121, 224, 0, 0.35);
+  box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.98), 0 0 30px rgba(121, 224, 0, 0.12);
+}
+
+.glass-scene-lime {
+  background: linear-gradient(135deg, rgba(21, 35, 12, 0.85) 0%, rgba(10, 16, 8, 0.95) 100%);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  border: 1px solid rgba(51, 255, 85, 0.3);
-  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.95), 0 0 40px -10px rgba(51, 255, 85, 0.2);
+  border: 1px solid rgba(121, 224, 0, 0.35);
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.95), 0 0 45px -10px rgba(121, 224, 0, 0.25);
 }
 
 .glass-input-luxury {
-  background: rgba(12, 18, 28, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(16, 16, 16, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
   transition: all 0.3s ease;
 }
 
 .glass-input-luxury:focus {
-  border-color: #33FF55;
-  box-shadow: 0 0 0 4px rgba(51, 255, 85, 0.25), 0 0 20px rgba(51, 255, 85, 0.15);
+  border-color: #79E000;
+  box-shadow: 0 0 0 4px rgba(121, 224, 0, 0.2), 0 0 20px rgba(121, 224, 0, 0.15);
   outline: none;
 }
 
-.green-text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #33FF55 45%, #9CFF3A 100%);
+.lime-text-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #79E000 50%, #B4FF38 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -55,58 +78,58 @@
   -webkit-text-fill-color: transparent;
 }
 
-.amber-text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #FFC107 50%, #FF9800 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.btn-emerald-glow {
-  background: linear-gradient(135deg, #33FF55 0%, #15D838 50%, #9CFF3A 100%);
-  box-shadow: 0 8px 35px rgba(51, 255, 85, 0.5), 0 0 15px rgba(51, 255, 85, 0.2);
+.btn-lime-glow {
+  background: linear-gradient(135deg, #79E000 0%, #61B800 50%, #99F21D 100%);
+  color: #050505;
+  box-shadow: 0 8px 35px rgba(121, 224, 0, 0.45), 0 0 15px rgba(121, 224, 0, 0.2);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-emerald-glow:hover {
-  box-shadow: 0 12px 50px rgba(51, 255, 85, 0.75), 0 0 25px rgba(51, 255, 85, 0.4);
-  transform: translateY(-3px) scale(1.015);
+.btn-lime-glow:hover {
+  box-shadow: 0 12px 50px rgba(121, 224, 0, 0.75), 0 0 30px rgba(121, 224, 0, 0.4);
+  transform: translateY(-3px) scale(1.02);
 }
 
-/* Background Atmosphere Scenes */
+.border-glow-lime {
+  box-shadow: 0 0 25px rgba(121, 224, 0, 0.25);
+  border-color: rgba(121, 224, 0, 0.4);
+}
+
+/* Background Atmosphere Radial Scenes */
 .scene-hero {
-  background: radial-gradient(circle at 50% 30%, rgba(51, 255, 85, 0.18) 0%, rgba(2, 4, 7, 1) 75%);
+  background: radial-gradient(circle at 50% 30%, rgba(121, 224, 0, 0.16) 0%, rgba(5, 5, 5, 1) 75%);
 }
 
 .scene-trust {
-  background: linear-gradient(180deg, #020407 0%, #060A10 100%);
+  background: linear-gradient(180deg, #050505 0%, #101010 100%);
 }
 
 .scene-problem {
-  background: radial-gradient(circle at 75% 25%, rgba(255, 50, 50, 0.12) 0%, #05060A 75%);
+  background: radial-gradient(circle at 75% 25%, rgba(255, 50, 50, 0.12) 0%, #080808 75%);
 }
 
 .scene-solution {
-  background: radial-gradient(circle at 25% 40%, rgba(51, 255, 85, 0.15) 0%, #03070E 80%);
+  background: radial-gradient(circle at 25% 40%, rgba(121, 224, 0, 0.14) 0%, #050505 80%);
 }
 
 .scene-spotlight {
-  background: linear-gradient(180deg, #03070E 0%, #080E1A 50%, #03070E 100%);
+  background: linear-gradient(180deg, #050505 0%, #101010 50%, #050505 100%);
 }
 
 .scene-usecases {
-  background: radial-gradient(circle at 50% 50%, rgba(51, 255, 85, 0.1) 0%, #02050A 80%);
+  background: radial-gradient(circle at 50% 50%, rgba(121, 224, 0, 0.1) 0%, #080808 80%);
 }
 
 .scene-gallery {
-  background: linear-gradient(180deg, #02050A 0%, #070D18 100%);
+  background: linear-gradient(180deg, #050505 0%, #101010 100%);
 }
 
 .scene-comparison {
-  background: radial-gradient(circle at 50% 30%, rgba(51, 255, 85, 0.12) 0%, #03060C 80%);
+  background: radial-gradient(circle at 50% 30%, rgba(121, 224, 0, 0.12) 0%, #050505 80%);
 }
 
 .scene-checkout {
-  background: radial-gradient(circle at 50% 40%, rgba(51, 255, 85, 0.22) 0%, #010204 85%);
+  background: radial-gradient(circle at 50% 40%, rgba(121, 224, 0, 0.2) 0%, #030303 85%);
 }
 
 /* Keyframe Animations & Floating Hotspots */
@@ -126,15 +149,15 @@
 @keyframes pulseRadar {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(51, 255, 85, 0.7);
+    box-shadow: 0 0 0 0 rgba(121, 224, 0, 0.7);
   }
   70% {
     transform: scale(1.1);
-    box-shadow: 0 0 0 16px rgba(51, 255, 85, 0);
+    box-shadow: 0 0 0 16px rgba(121, 224, 0, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(51, 255, 85, 0);
+    box-shadow: 0 0 0 0 rgba(121, 224, 0, 0);
   }
 }
 
@@ -160,15 +183,16 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #020407;
+  background: #050505;
 }
 ::-webkit-scrollbar-thumb {
-  background: #141d2a;
+  background: #1e1e1e;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #33FF55;
+  background: #79E000;
 }
+

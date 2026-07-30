@@ -1,6 +1,7 @@
 import React from 'react';
-import { ShieldCheck, Truck, Star, Zap, Radio, Plug, Lightbulb, Clock, ArrowDown, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Truck, Zap, ArrowDown, CheckCircle2, Plug, Radio, Lightbulb, Sparkles } from 'lucide-react';
 import { PRODUCT_INFO } from '../data/productData';
+import { heroImg } from '../assets/images';
 
 export const Hero: React.FC = () => {
   const scrollToCheckout = () => {
@@ -11,155 +12,158 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative pt-6 pb-20 md:pt-12 md:pb-28 overflow-hidden scene-hero border-b border-white/10">
-      {/* Background Ambient Glowing Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#33FF55]/18 rounded-full blur-[180px] pointer-events-none"></div>
-      <div className="absolute top-1/3 right-5 w-[400px] h-[400px] bg-[#9CFF3A]/10 rounded-full blur-[140px] pointer-events-none"></div>
+    <section className="relative pt-6 pb-16 md:pt-16 md:pb-32 overflow-hidden scene-hero border-b border-white/8">
+      {/* Ambient Radial Glow Orbs */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#79E000]/14 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-[400px] h-[400px] bg-[#79E000]/8 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#79E000]/6 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Top Morocco Exclusive Tag */}
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#06120b]/90 border border-[#33FF55]/40 green-glow-subtle backdrop-blur-md">
-            <span className="flex h-2.5 w-2.5 rounded-full bg-[#33FF55] animate-ping" />
-            <span className="text-xs md:text-sm font-bold text-[#33FF55] flex items-center gap-2 font-['Tajawal'] tracking-wide">
-              <Sparkles className="w-4 h-4 text-[#33FF55]" />
+        {/* Moroccan Exclusivity Badge */}
+        <div className="flex justify-center mb-6 md:mb-8">
+          <div className="inline-flex items-center gap-2 px-3.5 py-2 md:px-5 md:py-2.5 rounded-full bg-[#151515]/90 border border-[#79E000]/40 backdrop-blur-md shadow-[0_0_30px_rgba(121,224,0,0.1)] max-w-[90vw] text-center">
+            <span className="flex h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-[#79E000] animate-ping shrink-0" />
+            <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#79E000] shrink-0" />
+            <span className="text-[11px] md:text-sm font-bold text-[#79E000] font-['Tajawal'] tracking-wide leading-tight">
               العرض الحصري الأكثر طلباً في المغرب 🇲🇦
             </span>
           </div>
         </div>
 
-        {/* Headline & Headline Copy */}
-        <div className="text-center max-w-4xl mx-auto mb-8">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.2] mb-6 font-['Tajawal'] tracking-tight">
-            ⚡ لا تخلي انقطاع الكهرباء يوقف حياتك <br />
-            <span className="green-text-gradient inline-block mt-2">
-              محطة PRO FAST YY-203
+        {/* Headline */}
+        <div className="text-center max-w-4xl mx-auto mb-8 md:mb-10">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.15] mb-6 font-['Tajawal'] tracking-tight">
+            لا تخلي انقطاع الكهرباء يوقف حياتك
+            <span className="block lime-text-gradient mt-2">
+              ⚡ PRO FAST YY-203
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed font-medium max-w-3xl mx-auto mb-6">
-            محطة طاقة محمولة لتشغيل الراوتر، شحن الهواتف، إنارة البيت والمكتب في أي وقت — مصدر طاقة احتياطي عملي وموثوق.
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed font-medium max-w-3xl mx-auto mb-8 font-['Cairo']">
+            محطة طاقة محمولة عمليّة — تشغيل الراوتر، شحن الهواتف، إنارة البيت والمكتب في أي وقت تشاء بدون أي ضوضاء أو بنزين.
           </p>
 
-          {/* 3 Core Immediate Trust Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-bold text-gray-100 mb-8 font-['Tajawal']">
-            <span className="flex items-center gap-2 bg-[#0a141e]/90 px-3.5 py-2 rounded-xl border border-[#33FF55]/30">
-              <CheckCircle2 className="w-4 h-4 text-[#33FF55] shrink-0" />
-              الدفع عند الاستلام
-            </span>
-            <span className="flex items-center gap-2 bg-[#0a141e]/90 px-3.5 py-2 rounded-xl border border-[#33FF55]/30">
-              <Truck className="w-4 h-4 text-[#33FF55] shrink-0" />
-              توصيل مجاني 24-48 ساعة
-            </span>
-            <span className="flex items-center gap-2 bg-[#0a141e]/90 px-3.5 py-2 rounded-xl border border-[#33FF55]/30">
-              <ShieldCheck className="w-4 h-4 text-[#33FF55] shrink-0" />
-              معاينة المنتج قبل الدفع
-            </span>
+          {/* Instant Trust Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 md:mb-10 font-['Cairo'] px-2">
+            {[
+              { icon: CheckCircle2, text: 'الدفع عند الاستلام' },
+              { icon: Truck, text: 'توصيل مجاني 24-48 ساعة' },
+              { icon: ShieldCheck, text: 'معاينة قبل الدفع' },
+            ].map(({ icon: Icon, text }) => (
+              <span key={text} className="flex items-center gap-1.5 bg-[#151515]/90 px-3 py-2 rounded-xl border border-[#79E000]/20 text-xs font-semibold text-gray-100 shadow-lg whitespace-nowrap">
+                <Icon className="w-3.5 h-3.5 text-[#79E000] shrink-0" />
+                {text}
+              </span>
+            ))}
           </div>
         </div>
 
-        {/* HERO PRODUCT IMAGE SHOWCASE */}
+        {/* Hero Product Showcase */}
         <div className="relative w-full max-w-3xl mx-auto my-8 group">
-          {/* Backlight Glow Aura */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#33FF55]/30 via-[#9CFF3A]/15 to-transparent rounded-full filter blur-[90px] group-hover:blur-[120px] transition-all duration-700"></div>
+          {/* Product Aura Backlight */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#79E000]/25 via-[#79E000]/10 to-transparent rounded-full filter blur-[100px] group-hover:blur-[130px] transition-all duration-700 pointer-events-none" />
 
-          {/* Main Product Frame */}
-          <div className="relative glass-scene-emerald rounded-[2.5rem] p-6 md:p-10 border border-[#33FF55]/40 text-center shadow-2xl overflow-hidden">
-            <div className="absolute top-4 right-6 bg-[#040a12]/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#33FF55]/50 text-xs font-black text-[#33FF55] z-20 font-['Tajawal']">
-              PRO FAST YY-203
+          {/* Main Product Card */}
+          <div className="relative glass-scene-lime rounded-[2.5rem] p-6 md:p-10 text-center shadow-2xl overflow-hidden">
+            {/* Model Tag */}
+            <div className="absolute top-4 right-6 z-20">
+              <div className="bg-[#050505]/95 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#79E000]/50 flex items-center gap-2">
+                <Zap className="w-3.5 h-3.5 text-[#79E000]" />
+                <span className="text-xs font-black text-[#79E000] font-['Tajawal']">PRO FAST YY-203</span>
+              </div>
             </div>
 
+            {/* Rating Badge */}
+            <div className="absolute top-4 left-6 z-20 bg-[#050505]/95 backdrop-blur-md px-3 py-1.5 rounded-full border border-yellow-500/30">
+              <span className="text-xs font-black text-yellow-400 font-['Cairo']">⭐ 4.9 (384 تقييم)</span>
+            </div>
+
+            {/* Product Image */}
             <img
-              src="/src/assets/images/power_station_hero_1785257257475.jpg"
-              alt="PRO FAST YY-203 Portable Power Station Morocco"
-              referrerPolicy="no-referrer"
-              className="w-full max-h-[420px] sm:max-h-[500px] object-contain rounded-3xl animate-float-product filter drop-shadow-[0_30px_45px_rgba(0,0,0,0.95)]"
+              src={heroImg}
+              alt="محطة الطاقة المحمولة PRO FAST YY-203 – المغرب"
+              className="w-full max-h-[280px] sm:max-h-[380px] md:max-h-[460px] object-contain rounded-3xl animate-float-product filter drop-shadow-[0_30px_50px_rgba(0,0,0,0.95)] mx-auto"
             />
 
-            {/* Micro Feature Pills */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mt-6 text-right font-['Tajawal']">
-              <div className="glass-card p-2.5 rounded-xl border border-white/10 flex items-center gap-2">
-                <Plug className="w-4 h-4 text-[#33FF55] shrink-0" />
-                <div>
-                  <p className="text-[10px] text-gray-400">مقبس عام</p>
-                  <p className="text-xs font-bold text-white">AC Outlet</p>
+            {/* Feature Pills Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-6 font-['Cairo']">
+              {[
+                { icon: Plug, label: 'مقبس عام', sub: 'Universal AC' },
+                { icon: Zap, label: '3 منافذ USB', sub: 'شحن الهواتف' },
+                { icon: Radio, label: 'راديو FM', sub: 'هوائي معدني' },
+                { icon: Lightbulb, label: 'كشاف LED', sub: 'طوارئ مدمج' },
+              ].map(({ icon: Icon, label, sub }) => (
+                <div key={label} className="bg-[#151515]/80 p-2.5 rounded-xl border border-white/8 flex items-center gap-2 text-right hover:border-[#79E000]/30 transition-colors duration-300">
+                  <Icon className="w-4 h-4 text-[#79E000] shrink-0" />
+                  <div>
+                    <p className="text-[11px] font-bold text-white leading-tight">{label}</p>
+                    <p className="text-[10px] text-gray-500">{sub}</p>
+                  </div>
                 </div>
-              </div>
-
-              <div className="glass-card p-2.5 rounded-xl border border-white/10 flex items-center gap-2">
-                <Zap className="w-4 h-4 text-[#9CFF3A] shrink-0" />
-                <div>
-                  <p className="text-[10px] text-gray-400">منافذ شحن</p>
-                  <p className="text-xs font-bold text-white">3x USB</p>
-                </div>
-              </div>
-
-              <div className="glass-card p-2.5 rounded-xl border border-white/10 flex items-center gap-2 col-span-2 sm:col-span-1">
-                <Radio className="w-4 h-4 text-[#33FF55] shrink-0" />
-                <div>
-                  <p className="text-[10px] text-gray-400">راديو FM</p>
-                  <p className="text-xs font-bold text-white">هوائي معدني</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* PRICING & OFFER BENTO BOX */}
-        <div className="max-w-2xl mx-auto glass-scene-card p-6 md:p-8 rounded-3xl border border-white/15 bg-[#060a12]/95 shadow-2xl mb-8 text-right relative overflow-hidden">
-          <div className="absolute top-0 left-0 bg-gradient-to-r from-[#33FF55] to-[#9CFF3A] text-[#020407] text-xs font-black px-5 py-1.5 rounded-br-2xl shadow-lg font-['Tajawal']">
-            توفير 700 درهم مغربي ({PRODUCT_INFO.discountPercent}% OFF)
+        {/* Price Block Bento */}
+        <div className="max-w-2xl mx-auto glass-card-luxury rounded-3xl border border-white/10 bg-[#151515]/90 shadow-2xl mb-8 overflow-hidden">
+          {/* Discount Ribbon */}
+          <div className="bg-gradient-to-r from-[#79E000] to-[#99F21D] text-[#050505] text-xs font-black px-5 py-2 flex items-center justify-between font-['Tajawal']">
+            <span>🎉 توفير 700 درهم مغربي ({PRODUCT_INFO.discountPercent}% خصم)</span>
+            <span className="flex items-center gap-1.5 bg-[#050505]/20 px-2.5 py-0.5 rounded-full text-[#050505]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#050505] animate-ping" />
+              متبقي 9 قطع
+            </span>
           </div>
 
-          <div className="flex flex-wrap items-baseline justify-between gap-4 mt-3 mb-4">
-            <div className="flex items-baseline gap-2 font-['Tajawal']">
-              <span className="text-5xl sm:text-6xl font-black text-[#33FF55]">
-                {PRODUCT_INFO.price}
-              </span>
-              <span className="text-2xl font-bold text-gray-200">
-                {PRODUCT_INFO.currency}
-              </span>
-              <span className="text-xl text-gray-400 line-through mr-3 font-semibold">
-                {PRODUCT_INFO.oldPrice} {PRODUCT_INFO.currency}
-              </span>
+          <div className="p-5 md:p-8">
+            {/* Price Display */}
+            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between gap-3 mb-5 text-right font-['Tajawal']">
+              <div className="flex items-baseline gap-2.5">
+                <span className="text-4xl sm:text-5xl md:text-6xl font-black text-[#79E000] tabular-nums">
+                  {PRODUCT_INFO.price}
+                </span>
+                <span className="text-xl md:text-2xl font-bold text-gray-200">{PRODUCT_INFO.currency}</span>
+                <span className="text-base md:text-lg text-gray-500 line-through font-semibold">
+                  {PRODUCT_INFO.oldPrice} {PRODUCT_INFO.currency}
+                </span>
+              </div>
+              <div className="text-xs font-bold text-[#79E000] bg-[#79E000]/10 px-3 py-1.5 rounded-full border border-[#79E000]/25 self-start sm:self-auto">
+                السعر المخفّض حصري اليوم
+              </div>
             </div>
 
-            <div className="text-xs font-bold text-[#33FF55] bg-[#33FF55]/10 px-3.5 py-1.5 rounded-full border border-[#33FF55]/30 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#33FF55] animate-ping"></span>
-              <span>متوفر حالياً بالثمن المخفض</span>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10 text-xs sm:text-sm text-gray-200 font-medium font-['Tajawal']">
-            <div className="flex items-center gap-2 text-[#33FF55]">
-              <Truck className="w-4 h-4 shrink-0" />
-              <span>توصيل مجاني 100%</span>
-            </div>
-            <div className="flex items-center gap-2 text-[#9CFF3A]">
-              <ShieldCheck className="w-4 h-4 shrink-0" />
-              <span>الدفع عند الاستلام</span>
-            </div>
-            <div className="flex items-center gap-2 text-gray-200">
-              <Clock className="w-4 h-4 text-[#33FF55] shrink-0" />
-              <span>تسليم خلال 24-48 ساعة</span>
+            {/* Micro Trust Row */}
+            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-white/8 text-xs font-semibold font-['Cairo']">
+              {[
+                { icon: Truck, text: 'توصيل مجاني', color: 'text-[#79E000]' },
+                { icon: ShieldCheck, text: 'دفع عند الاستلام', color: 'text-[#79E000]' },
+                { icon: CheckCircle2, text: 'ضمان 30 يوم', color: 'text-gray-300' },
+              ].map(({ icon: Icon, text, color }) => (
+                <div key={text} className={`flex items-center gap-1.5 ${color}`}>
+                  <Icon className="w-4 h-4 shrink-0" />
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* PRIMARY CALL TO ACTION BUTTON */}
+        {/* CTA Button */}
         <div className="max-w-xl mx-auto text-center space-y-4">
           <button
+            id="hero-cta"
             onClick={scrollToCheckout}
-            className="w-full btn-emerald-glow text-[#020407] font-black text-xl py-5 px-8 rounded-2xl flex items-center justify-center gap-3 cursor-pointer shadow-2xl font-['Tajawal']"
+            className="w-full btn-lime-glow font-black text-xl py-5 px-8 rounded-2xl flex items-center justify-center gap-3 cursor-pointer font-['Tajawal'] group"
           >
-            <Zap className="w-6 h-6 fill-current text-[#020407]" />
+            <Zap className="w-6 h-6 fill-current shrink-0" />
             <span>اطلب الآن — الدفع عند الاستلام</span>
             <ArrowDown className="w-5 h-5 animate-bounce" />
           </button>
 
-          <p className="text-xs text-gray-400 font-medium flex items-center justify-center gap-2 font-['Tajawal']">
-            <ShieldCheck className="w-4 h-4 text-[#33FF55]" />
+          <p className="text-xs text-gray-500 font-medium flex items-center justify-center gap-2 font-['Cairo']">
+            <ShieldCheck className="w-4 h-4 text-[#79E000]" />
             تتأكد وتتفحص طردك بنفسك قبل الدفع للموزع
           </p>
         </div>

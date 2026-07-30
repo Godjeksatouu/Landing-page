@@ -4,81 +4,99 @@ import { REVIEWS } from '../data/productData';
 
 export const Testimonials: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 bg-section-gallery border-t border-white/10 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="py-16 md:py-24 scene-gallery border-t border-white/8 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#79E000]/5 rounded-full blur-[150px] pointer-events-none" />
 
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#33FF55]/10 border border-[#33FF55]/30 text-[#33FF55] text-xs font-bold mb-4 font-['Tajawal']">
-            <Sparkles className="w-4 h-4 text-[#33FF55]" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#79E000]/10 border border-[#79E000]/30 text-[#79E000] text-xs font-bold mb-5 font-['Cairo']">
+            <Sparkles className="w-4 h-4" />
             قصص وانطباعات زبنائنا بالمغرب 🇲🇦
+          </div>
+
+          {/* Aggregate Rating */}
+          <div className="flex items-center justify-center gap-2 mb-5">
+            <div className="flex text-amber-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-6 h-6 fill-current" />
+              ))}
+            </div>
+            <span className="text-white font-black text-2xl font-['Tajawal']">4.9</span>
+            <span className="text-gray-500 text-sm font-['Cairo']">من 384 تقييم موثوق</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white font-['Tajawal'] leading-tight mb-4">
             تجارب واقعية يعتز بها مستخدمونا
           </h2>
 
-          <p className="text-base md:text-lg text-gray-300 font-medium">
-            شهادات حقيقية من زبنائنا في الدار البيضاء، الرباط، طنجة ومراكش بعد استلام وتشغيل المحطة.
+          <p className="text-base md:text-lg text-gray-400 font-medium font-['Cairo']">
+            شهادات حقيقية من زبنائنا في الدار البيضاء، الرباط، طنجة، ومراكش.
           </p>
         </div>
 
-        {/* Customer Story Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
+        {/* Reviews Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {REVIEWS.map((review) => (
             <div
               key={review.id}
-              className="glass-card-premium p-6 md:p-8 rounded-3xl border border-white/15 bg-[#090d16]/90 hover:border-[#33FF55]/40 transition-all relative flex flex-col justify-between group shadow-xl"
+              className="glass-card-luxury p-6 md:p-8 rounded-3xl border border-white/8 bg-[#151515]/80 hover:border-[#79E000]/35 transition-all duration-300 relative flex flex-col justify-between group shadow-xl"
             >
+              {/* Large Quote Watermark */}
+              <div className="absolute top-4 left-4 text-[#79E000]/8 pointer-events-none">
+                <Quote className="w-16 h-16" />
+              </div>
+
               <div>
-                <div className="flex items-center justify-between mb-6">
+                {/* User Row */}
+                <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3.5">
                     <img
                       src={review.avatar}
                       alt={review.name}
-                      referrerPolicy="no-referrer"
-                      className="w-14 h-14 rounded-full object-cover border-2 border-[#33FF55]/50 shadow-lg group-hover:scale-105 transition-transform"
+                      className="w-13 h-13 w-[52px] h-[52px] rounded-full object-cover border-2 border-[#79E000]/40 shadow-lg group-hover:border-[#79E000]/70 transition-colors"
                     />
                     <div className="text-right">
-                      <h3 className="text-lg font-bold text-white font-['Tajawal']">{review.name}</h3>
-                      <div className="flex items-center gap-1.5 text-xs text-gray-300 font-medium mt-0.5">
-                        <MapPin className="w-3.5 h-3.5 text-[#33FF55]" />
+                      <h3 className="text-base font-black text-white font-['Tajawal']">{review.name}</h3>
+                      <div className="flex items-center gap-1.5 text-xs text-gray-500 font-medium mt-0.5 font-['Cairo']">
+                        <MapPin className="w-3.5 h-3.5 text-[#79E000]" />
                         <span>{review.city}</span>
-                        <span>•</span>
+                        <span>·</span>
                         <span>{review.date}</span>
                       </div>
                     </div>
                   </div>
 
-                  <span className="text-[11px] font-bold px-3 py-1 rounded-full bg-[#33FF55]/20 text-[#33FF55] border border-[#33FF55]/40 flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5" />
+                  <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#79E000]/12 text-[#79E000] border border-[#79E000]/30 flex items-center gap-1 font-['Cairo']">
+                    <ShieldCheck className="w-3 h-3" />
                     {review.tag}
                   </span>
                 </div>
 
-                {/* Star Rating Bar */}
+                {/* Star Rating */}
                 <div className="flex items-center text-amber-400 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-current" />
+                    <Star key={i} className="w-4 h-4 fill-current" />
                   ))}
                 </div>
 
-                <p className="text-base text-gray-200 leading-relaxed font-medium mb-6 text-right">
+                {/* Comment */}
+                <p className="text-sm text-gray-300 leading-relaxed font-medium mb-6 text-right font-['Cairo']">
                   "{review.comment}"
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
-                <span className="flex items-center gap-1.5 text-[#33FF55] font-semibold">
+              {/* Footer */}
+              <div className="pt-4 border-t border-white/8 flex items-center justify-between text-xs text-gray-500 font-['Cairo']">
+                <span className="flex items-center gap-1.5 text-[#79E000] font-semibold">
                   <ShieldCheck className="w-4 h-4" />
-                  تم التسليم بنجاح مع معاينة المنتج
+                  تم التسليم مع معاينة المنتج
                 </span>
-                <Quote className="w-5 h-5 text-[#33FF55]/40" />
+                <Quote className="w-5 h-5 text-[#79E000]/25" />
               </div>
             </div>
           ))}
-
         </div>
 
       </div>

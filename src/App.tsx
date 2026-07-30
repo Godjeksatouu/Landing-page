@@ -25,7 +25,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#030508] text-[#FFFFFF] font-['Cairo',sans-serif] selection:bg-[#33FF55] selection:text-[#030508] relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#050505] text-[#FFFFFF] font-['Cairo',sans-serif] selection:bg-[#79E000] selection:text-[#050505] relative overflow-x-hidden">
       {/* 1. Sticky Navigation Header */}
       <Header />
 
@@ -85,3 +85,4 @@ export default function App() {
     </div>
   );
 }
+
