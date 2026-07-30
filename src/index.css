@@ -14,18 +14,30 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* iOS safe-area for sticky footer CTA */
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
-  /* Prevent text selection on interactive elements */
   button, a {
     -webkit-tap-highlight-color: transparent;
   }
+
+  /* 44px minimum touch targets — Fitts's Law */
+  button {
+    min-height: 44px;
+  }
+
+  button:focus-visible, a:focus-visible {
+    outline: 2px solid #79E000;
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
 }
 
-/* Glass Card (base alias) */
+/* ---------------------------------------------------- */
+/*   COLOR SYSTEM & DESIGN TOKENS                       */
+/* ---------------------------------------------------- */
+
 .glass-card {
   background: rgba(21, 21, 21, 0.75);
   backdrop-filter: blur(24px);
@@ -34,14 +46,6 @@
   box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-/* ----------------------------------------------------
-   COLOR SYSTEM & UTILITIES
-   Primary: #79E000
-   Dark: #050505
-   Surface: #101010
-   Cards: #151515
-   ---------------------------------------------------- */
 
 .glass-card-luxury {
   background: rgba(21, 21, 21, 0.75);
@@ -90,11 +94,29 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* Primary CTA — shimmer sweep on hover */
 .btn-lime-glow {
   background: linear-gradient(135deg, #79E000 0%, #61B800 50%, #99F21D 100%);
   color: #050505;
   box-shadow: 0 8px 35px rgba(121, 224, 0, 0.45), 0 0 15px rgba(121, 224, 0, 0.2);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-lime-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  transition: left 0.55s ease;
+}
+
+.btn-lime-glow:hover::after {
+  left: 150%;
 }
 
 .btn-lime-glow:hover {
@@ -107,104 +129,110 @@
   border-color: rgba(121, 224, 0, 0.4);
 }
 
-/* Background Atmosphere Radial Scenes */
+/* ---------------------------------------------------- */
+/*   BACKGROUND SCENES                                  */
+/* ---------------------------------------------------- */
+
 .scene-hero {
   background: radial-gradient(circle at 50% 30%, rgba(121, 224, 0, 0.16) 0%, rgba(5, 5, 5, 1) 75%);
 }
-
 .scene-trust {
   background: linear-gradient(180deg, #050505 0%, #101010 100%);
 }
-
 .scene-problem {
   background: radial-gradient(circle at 75% 25%, rgba(255, 50, 50, 0.12) 0%, #080808 75%);
 }
-
 .scene-solution {
   background: radial-gradient(circle at 25% 40%, rgba(121, 224, 0, 0.14) 0%, #050505 80%);
 }
-
 .scene-spotlight {
   background: linear-gradient(180deg, #050505 0%, #101010 50%, #050505 100%);
 }
-
 .scene-usecases {
   background: radial-gradient(circle at 50% 50%, rgba(121, 224, 0, 0.1) 0%, #080808 80%);
 }
-
 .scene-gallery {
   background: linear-gradient(180deg, #050505 0%, #101010 100%);
 }
-
 .scene-comparison {
   background: radial-gradient(circle at 50% 30%, rgba(121, 224, 0, 0.12) 0%, #050505 80%);
 }
-
 .scene-checkout {
   background: radial-gradient(circle at 50% 40%, rgba(121, 224, 0, 0.2) 0%, #030303 85%);
 }
 
-/* Keyframe Animations & Floating Hotspots */
-@keyframes floatProduct {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-16px) rotate(0.8deg);
-  }
-}
+/* ---------------------------------------------------- */
+/*   ANIMATIONS                                         */
+/* ---------------------------------------------------- */
 
+@keyframes floatProduct {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(0.8deg); }
+}
 .animate-float-product {
   animation: floatProduct 6s ease-in-out infinite;
 }
 
 @keyframes pulseRadar {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(121, 224, 0, 0.7);
-  }
-  70% {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 16px rgba(121, 224, 0, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(121, 224, 0, 0);
-  }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(121, 224, 0, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 16px rgba(121, 224, 0, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(121, 224, 0, 0); }
 }
-
 .animate-radar-dot {
   animation: pulseRadar 2s infinite;
 }
 
-/* Custom Horizontal Marquee */
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
-
 .animate-marquee {
   display: flex;
   width: 200%;
   animation: marquee 25s linear infinite;
 }
-
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Count-up reveal */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-::-webkit-scrollbar-track {
-  background: #050505;
-}
-::-webkit-scrollbar-thumb {
-  background: #1e1e1e;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #79E000;
+.animate-count-up {
+  animation: countUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* Slide in from bottom */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slideInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Urgency pulse */
+@keyframes urgencyPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.65; }
+}
+.animate-urgency {
+  animation: urgencyPulse 1.8s ease-in-out infinite;
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease both;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: #1e1e1e; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #79E000; }
